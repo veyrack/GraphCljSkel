@@ -25,7 +25,7 @@
       (do (println "=> Mauvais choix") (recur)))))
 
 (defn toDo [g]
-  (println "Que souhaite tu faire avec\n"g"\n[0] Degrees\n[1] Distance\n[2] Closeness\n[3] Closeness-all\n[4] Rank-node\n[5] To dot")
+  (println "Que souhaite tu faire avec\n"g"\n[0] Degrees\n[1] Distance\n[2] Closeness\n[3] Closeness-all\n[4] Rank-node\n[5] To dot\n[6] Exit")
   (let [x (read-line)]
     (case (Integer/parseInt x)
       0 (do (println "=====Degree du graph=====\n"(central/degrees g)"\n==========================\n") (recur g))
@@ -34,6 +34,7 @@
       3 (do (println "=====Closeness All=====\n"(central/closeness-all g)"\n========================\n") (recur g))
       4 (do (println "=====Rank du graph=====\n"(get-param-rank g)"\n======================\n") (recur g))
       5 (do (println "=====ToDot du graph=====\n"(get-param-toDot g)"\n======================\n") (recur g))
+      6 ()
       (do (println "=> Mauvais choix") (recur g)))))
 
 
